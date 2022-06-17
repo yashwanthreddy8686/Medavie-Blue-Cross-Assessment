@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/medavie-blue-cross-assessment/static/css/main.b8dba1d1.css",
+    "main.js": "/medavie-blue-cross-assessment/static/js/main.5fa131cf.js",
+    "static/js/787.a5789c80.chunk.js": "/medavie-blue-cross-assessment/static/js/787.a5789c80.chunk.js",
+    "index.html": "/medavie-blue-cross-assessment/index.html",
+    "main.b8dba1d1.css.map": "/medavie-blue-cross-assessment/static/css/main.b8dba1d1.css.map",
+    "main.5fa131cf.js.map": "/medavie-blue-cross-assessment/static/js/main.5fa131cf.js.map",
+    "787.a5789c80.chunk.js.map": "/medavie-blue-cross-assessment/static/js/787.a5789c80.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8dba1d1.css",
+    "static/js/main.5fa131cf.js"
+  ]
+}
