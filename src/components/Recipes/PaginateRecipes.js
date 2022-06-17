@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate'
 import RecipesList from './RecipesList'
+import './PaginateRecipes.css'
 
 const PaginateRecipes = ({ itemsPerPage, items, totalResults, offset, number }) => {
     const [currentItems, setcurrentItems] = useState([])
@@ -10,14 +11,11 @@ const PaginateRecipes = ({ itemsPerPage, items, totalResults, offset, number }) 
     useEffect(() => {
         const endOffset = itemOffset + itemsPerPage;
         setcurrentItems(items.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(totalResults / itemsPerPage))
+        setPageCount(Math.ceil(items.length / itemsPerPage))
     }, [itemOffset, itemsPerPage, items]);
 
     const handlePageClick = (event) => {
-        const newOffset = (event.selected * itemsPerPage) % totalResults;
-        console.log(
-            `User requested page number ${event.selected}, which is offset ${newOffset}`
-        );
+        const newOffset = (event.selected * itemsPerPage) % items.length;
         setItemOffset(newOffset);
     }
 
@@ -32,6 +30,11 @@ const PaginateRecipes = ({ itemsPerPage, items, totalResults, offset, number }) 
                 pageCount={pageCount}
                 previousLabel="< previous"
                 renderOnZeroPageCount={null}
+                containerClassName={'paginationBttns'}
+                previousLinkClassName={'prevBttn'}
+                nextLinkClassName={'nextBttn'}
+                disabledClassName={'paginationDisabled'}
+                activeClassName={'paginationActive'}
             />
         </>
     )
