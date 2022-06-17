@@ -49,10 +49,10 @@ const Recipes = () => {
                 <form className='recipes__form' onSubmit={handleRecipeChange}>
                     <div className='recipes__searchBar'>
                         <input type='text' value={query} className='recipes_input' placeholder='Enter a recipe' name='recipeInput' onChange={handleSearchQuery} />
-                        <button className='button'>Search</button>
+                        <button className='bttn'>Search</button>
                     </div>
                     <div className='recipes__filterControl'>
-                        <label>Filter By Cuisine</label>
+                        <label className='recipes__filterControl-label'>Filter By Cuisine</label>
                         <select onChange={handleCuisineChange}>
                             {cuisines.map(cuisine => {
                                 return <option value={cuisine} key={cuisine}>{cuisine}</option>

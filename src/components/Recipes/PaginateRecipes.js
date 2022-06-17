@@ -24,11 +24,11 @@ const PaginateRecipes = ({ itemsPerPage, items, totalResults, offset, number }) 
             <RecipesList currentItems={currentItems} />
             <ReactPaginate
                 breakLabel="..."
-                nextLabel="next >"
+                nextLabel=" >"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={5}
                 pageCount={pageCount}
-                previousLabel="< previous"
+                previousLabel="< "
                 renderOnZeroPageCount={null}
                 containerClassName={'paginationBttns'}
                 previousLinkClassName={'prevBttn'}

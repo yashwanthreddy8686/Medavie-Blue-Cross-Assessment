@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Parse from 'html-react-parser'
+import './RecipeDetail.css'
 
 const RecipeDetail = () => {
     const [recipeDetail, setRecipeDetail] = useState(null)
@@ -18,31 +18,36 @@ const RecipeDetail = () => {
     }
 
     return (
-        <div className='recipeDetails'>
-            <section className='recipe__header'>
-                <h3 className='recipe__name'> {recipeDetail?.title}</h3>
-                <img className='recipe__image' src={recipeDetail?.image} alt='recipe'></img>
-            </section>
-            <section className='recipe__healthInfo'>
-                <h3>Health Information</h3>
-                <div className='recipe__healthInfo-details'>
-                    {recipeDetail?.vegan ? <p>It is Vegan</p> : <p>It is not a Vegan</p>}
-                    {recipeDetail?.dairyFree ? <p>It is dairyFree</p> : <p>It is not dairyFree</p>}
-                </div>
-            </section>
-            <section className='recipe__ingredients'>
-                <h3 className='recipe__ingredients-title'>List of Ingredients</h3>
-                <ul className='recipe__ingredients-list'>
-                    {recipeDetail?.extendedIngredients.map(ingredient => {
-                        return <li key={ingredient.id}><p>{ingredient.name}<br></br>{ingredient.original}</p></li>
-                    })}
-                </ul>
-            </section>
-            <section className='recipe__instructions'>
-                <h3>Cooking Instructions</h3>
-                {recipeDetail?.instructions}
-            </section>
-        </div>
+        <main className='recipe__main'>
+            <h1>Recipe Details</h1>
+            <div className='recipeDetails'>
+                <section className='recipe__header'>
+                    <h3 className='recipe__name'> {recipeDetail?.title}</h3>
+                    <div className='recipe__imageBox'>
+                        <img className='recipe__image' src={recipeDetail?.image} alt='recipe'></img>
+                    </div>
+                </section>
+                <section className='recipe__healthInfo'>
+                    <h3>Health Information</h3>
+                    <div className='recipe__healthInfo-details'>
+                        {recipeDetail?.vegan ? <p className='recipe__healthInfo-details-vegan'>→ It is Vegan</p> : <p>→ It is not a Vegan</p>}
+                        {recipeDetail?.dairyFree ? <p className='recipe__healthInfo-details-dairyFree'>→ It is dairyFree</p> : <p>→ It is not dairyFree</p>}
+                    </div>
+                </section>
+                <section className='recipe__ingredients'>
+                    <h3 className='recipe__ingredients-title'>List of Ingredients</h3>
+                    <ul className='recipe__ingredients-list'>
+                        {recipeDetail?.extendedIngredients.map(ingredient => {
+                            return <li key={ingredient.id}><p>→ {ingredient.name}<br></br>{ingredient.original}</p></li>
+                        })}
+                    </ul>
+                </section>
+                <section className='recipe__instructions'>
+                    <h3>Cooking Instructions</h3>
+                    <p>{recipeDetail?.instructions}</p>
+                </section>
+            </div>
+        </main>
     )
 }
 

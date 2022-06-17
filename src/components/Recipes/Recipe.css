@@ -1,0 +1,37 @@
+.recipeList__card{
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.recipeList__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipeList__card-title{
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+    .recipeList__item{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .recipeList__card-imgCon{
+        width: 200px;
+        height: 200px;
+    }
+    .recipeList__card-image{
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .recipeList__card-title{
+        margin: auto;
+    }
+}
